@@ -40,7 +40,7 @@ services:
      - /tmp/certs/server.crt
     volumes:
      - ./certs/:/tmp/certs
-    
+
   unfetter-discover-processor:
     build: ../unfetter-store/unfetter-discover-processor
     container_name: unfetter-discover-processor
@@ -51,7 +51,7 @@ services:
     #  - ../unfetter-store/unfetter-discover-processor:/usr/src/app
     environment:
      - MONGO_HOST=repository
-    entrypoint: 
+    entrypoint:
      - node
      - processor.js
      - --stix
@@ -81,7 +81,7 @@ services:
       - API_CONTEXT=/
     ports:
     - "3001:10010"
-    entrypoint: 
+    entrypoint:
      - npm
      - start
     depends_on:
@@ -101,7 +101,7 @@ services:
   unfetter-discover-api-explorer:
     build: ../unfetter-store/unfetter-discover-api
     container_name: unfetter-discover-api-explorer
-    image: unfetter-discover-api       
+    image: unfetter-discover-api
     depends_on:
     - unfetter-discover-openssl
     - cti-stix-store-repository
@@ -132,7 +132,7 @@ services:
   unfetter-discover-api:
     build: ../unfetter-store/unfetter-discover-api
     container_name: unfetter-discover-api
-    image: unfetter-discover-api   
+    image: unfetter-discover-api
     depends_on:
     - unfetter-discover-openssl
     - cti-stix-store-repository
@@ -171,7 +171,7 @@ services:
     entrypoint:
      - npm
      - run
-     - build:aot:prod:noclean
+     - build:prod
     environment:
     # Options: UAC, TEST, DEMO
     - RUN_MODE=UAC

@@ -91,7 +91,7 @@ services:
     - MONGO_REPOSITORY=repository
     - MONGO_PORT=27017
     - MONGO_DBNAME=stix
-    - ENV=prod    
+    - ENV=prod
     entrypoint:
     - npm
     - run
@@ -139,4 +139,4 @@ services:
     entrypoint:
     - npm
     - run
-    - server:dev:alt
+    - server:dev
